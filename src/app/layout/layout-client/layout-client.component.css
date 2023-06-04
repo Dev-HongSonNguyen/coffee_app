@@ -116,6 +116,9 @@
   gap: 20px;
   margin: 0px;
 }
+.header-nav-bottom-elem-left {
+  padding: 0px 40px;
+}
 .header-nav-bottom-elem-left-big li {
   padding: 10px 0px;
 }
