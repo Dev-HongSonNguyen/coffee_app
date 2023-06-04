@@ -1,0 +1,8 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-gap: 30px;
+}
+.content {
+  padding-top: 25px;
+}
