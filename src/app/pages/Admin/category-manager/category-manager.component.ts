@@ -15,6 +15,17 @@ export class CategoryManagerComponent {
        console.log("hahaha", this.categoryData);
     })
   }
- 
+  Delete(id: string) {
+    // console.log("idhihih", id);
+    // return
+    if (confirm('bạn có muốn xoá danh mục này không')) {
+      this.categoryService.deleteCategory(id).subscribe(() => {
+        this.categoryData = this.categoryData.filter(
+          (item: any) => item?._id !== id
+        );
+      });
+      alert("Xoá danh mục thành công")
+    }
+  }
   
 }
