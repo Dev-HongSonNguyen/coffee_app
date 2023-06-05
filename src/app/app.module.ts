@@ -8,7 +8,7 @@ import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.compone
 import { DashboardComponent } from './pages/Admin/dashboard/dashboard.component';
 import { ProductManagerComponent } from './pages/Admin/product-manager/product-manager.component';
 import { HomePageComponent } from './pages/Client/home-page/home-page.component';
-
+import { HttpClientModule } from "@angular/common/http"
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,8 @@ import { HomePageComponent } from './pages/Client/home-page/home-page.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
