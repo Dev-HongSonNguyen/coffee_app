@@ -5,6 +5,7 @@ import { LayoutClientComponent } from './layout/layout-client/layout-client.comp
 import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
 import { DashboardComponent } from './pages/Admin/dashboard/dashboard.component';
 import { ProductManagerComponent } from './pages/Admin/product-manager/product-manager.component';
+import { CategoryManagerComponent } from './pages/Admin/category-manager/category-manager.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
       },
       {
         path: "product", component: ProductManagerComponent
+      },
+      {
+        path: "category", component: CategoryManagerComponent
       }
     ] 
   }

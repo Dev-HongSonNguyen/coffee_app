@@ -9,6 +9,7 @@ import { DashboardComponent } from './pages/Admin/dashboard/dashboard.component'
 import { ProductManagerComponent } from './pages/Admin/product-manager/product-manager.component';
 import { HomePageComponent } from './pages/Client/home-page/home-page.component';
 import { HttpClientModule } from "@angular/common/http"
+import { CategoryManagerComponent } from './pages/Admin/category-manager/category-manager.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { HttpClientModule } from "@angular/common/http"
     LayoutAdminComponent,
     DashboardComponent,
     ProductManagerComponent,
-    HomePageComponent
+    HomePageComponent,
+    CategoryManagerComponent
   ],
   imports: [
     BrowserModule,

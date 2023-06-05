@@ -12,6 +12,9 @@ export class CategoryManagerComponent {
   ngOnInit(){
     this.categoryService.getAllCategory().subscribe((data: any) => {
       this.categoryData = data.category
+       console.log("hahaha", this.categoryData);
     })
   }
+ 
+  
 }
