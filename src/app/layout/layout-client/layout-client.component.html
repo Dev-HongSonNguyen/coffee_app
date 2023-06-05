@@ -1,64 +1,112 @@
 <div class="">
-    <div class="header-top">
-        <div class="header-top-elem">
-            <div class="header-top-elem-item">
-                <p>Welcome to our online store!</p>
-            </div>
-        </div>
-    </div>
-    <div class="header-nav">
-        <div class="header-nav-top-elem">
-            <div class="header-nav-top-elem-search">
-                <form action="">
-                    <input type="text" placeholder="search...">
-                    <button><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="header-nav-top-elem-logo">
-                <a href="#">
-                    <!-- <img src="image/Logo.png" alt=""> -->
-                    <h2 style="color: #111111">CAFE CONCAK</h2>
-                </a>
-            </div>
-            <div class="header-nav-top-elem-cart">
-                <i class="fas fa-shopping-cart header-nav-top-elem-cart-icon"></i>
-                <div class="header-nav-top-elem-cart-content">
-                    <p>Shopping Cart</p>
-                    <p>0 item</p>
+    <div class="">
+        <div class="header-top">
+            <div class="header-top-elem">
+                <div class="header-top-elem-item">
+                    <p>Welcome to our online store!</p>
                 </div>
             </div>
         </div>
-        <div class="header-nav-bottom-elem">
-            <div class="header-nav-bottom-elem-left">
-                <ul class="header-nav-bottom-elem-left-big">
-                    <li><a href="#">HOME</a></li>
-                    <li class="header-nav-bottom-elem-left-big-cate"><a href="#">CATEGORY</a>
-                        <ul class="header-nav-bottom-elem-left-small">
-                            <li><a href="#">Campuchino</a></li>
-                            <li><a href="#">Campuchino</a></li>
-                            <li><a href="#">Campuchino</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">ESPRESSO</a></li>
-                    <li><a href="#">CAMPUCHINO</a></li>
-                    <li><a href="#">BLOG</a></li>
+        <div class="header-nav">
+            <div class="header-nav-top-elem">
+                <div class="header-nav-top-elem-search">
+                    <form action="">
+                        <input type="text" placeholder="search...">
+                        <button><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="header-nav-top-elem-logo">
+                    <a href="#">
+                        <!-- <img src="image/Logo.png" alt=""> -->
+                        <h2 style="color: #111111">CAFE CONCAK</h2>
+                    </a>
+                </div>
+                <div class="header-nav-top-elem-cart">
+                    <i class="fas fa-shopping-cart header-nav-top-elem-cart-icon"></i>
+                    <div class="header-nav-top-elem-cart-content">
+                        <p>Shopping Cart</p>
+                        <p>0 item</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav-bottom-elem">
+                <div class="header-nav-bottom-elem-left">
+                    <ul class="header-nav-bottom-elem-left-big">
+                        <li><a href="#">HOME</a></li>
+                        <li class="header-nav-bottom-elem-left-big-cate"><a href="#">CATEGORY</a>
+                            <ul class="header-nav-bottom-elem-left-small">
+                                <li><a href="#">Campuchino</a></li>
+                                <li><a href="#">Campuchino</a></li>
+                                <li><a href="#">Campuchino</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ESPRESSO</a></li>
+                        <li><a href="#">CAMPUCHINO</a></li>
+                        <li><a href="#">BLOG</a></li>
 
-                </ul>
-            </div>
-            <div class=" header-nav-bottom-elem-right">
-                <i class="fas fa-user"></i>
-                <div class="header-nav-bottom-elem-right-user">
-                    <a href="#">SIGN IN /</a>
-                    <a href="#">SIGN UP</a>
+                    </ul>
                 </div>
-                <!-- <i></i>
-                <div class="header-nav-bottom-elem-right-user">
-                    
-                </div> -->
+                <div class=" header-nav-bottom-elem-right">
+                    <i class="fas fa-user"></i>
+                    <div class="header-nav-bottom-elem-right-user">
+                        <a href="#">SIGN IN /</a>
+                        <a href="#">SIGN UP</a>
+                    </div>
+                    <!-- <i></i>
+                    <div class="header-nav-bottom-elem-right-user">
+                        
+                    </div> -->
+                </div>
             </div>
         </div>
     </div>
     <div class="">
         <router-outlet />
     </div>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-top-item">
+                <h5>CONTACT INFO</h5>
+                <ul>
+                    <li>Address: 71 Pennington Lane Vernon Rockville, CT 06066.</li>
+                    <li>Phone: +84 888 654 355</li>
+                    <li>E-mail: Theme@Demo.Com</li>
+                </ul>
+            </div>
+            <div class="footer-top-item">
+                <h5>INFORMATION</h5>
+                <ul>
+                    <li><a routerLink="#">Delivery</a></li>
+                    <li><a routerLink="#">Legal Notice</a></li>
+                    <li><a routerLink="#">About Us</a></li>
+                    <li><a routerLink="#">Best Sales</a></li>
+                    <li><a routerLink="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-top-item">
+                <h5>MY ACCOUNT</h5>
+                <ul>
+                    <li><a routerLink="#">Personal Info</a></li>
+                    <li><a routerLink="#">Orders</a></li>
+                    <li><a routerLink="#">Credit Slips</a></li>
+                    <li><a routerLink="#">Addresses</a></li>
+                    <li><a routerLink="#">My Wishlists</a></li>
+                </ul>
+            </div>
+            <div class="footer-top-item">
+                <h5>CONTACT INFO</h5>
+                <p>Subscribe to our newsletters now and stay up to date with new collections and exclusive offers.</p>
+                <input type="text" placeholder="Enter e-mail here...">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a routerLink="#">
+                © 2023 - Ecommerce software by PrestaShop™
+            </a>
+            <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685989670/Duan_Angular/image/payment_cvbkzb.png"
+                alt="">
+        </div>
+    </footer>
+
 </div>
