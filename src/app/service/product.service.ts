@@ -20,4 +20,7 @@ export class ProductService {
   deleteProduct(id: string):Observable<IProduct>{
     return this.http.delete<IProduct>(`http://localhost:8080/products/${id}`)
   }
+  addProduct(product: IProduct):Observable<IProduct>{
+    return this.http.post<IProduct>("http://localhost:8080/products", product)
+  }
 }

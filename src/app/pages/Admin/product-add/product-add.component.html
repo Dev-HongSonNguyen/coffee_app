@@ -1,0 +1,53 @@
+<!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<h1 class="grid h-10 w-32 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">ADD PRODUCT</h1>
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+
+    <form (ngSubmit)="Add()" action="" class="mx-auto mb-0 mt-8 max-w-xl space-y-4" [formGroup]="productForm">
+        <div>
+            <label for="name" class="sr-only">Name</label>
+            <div class="relative">
+                <input type="name" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter name" formControlName="name" />
+            </div>
+        </div>
+        <div>
+            <label for="image" class="sr-only">Image</label>
+            <div class="relative">
+                <input type="text" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter image" formControlName="image" />
+            </div>
+        </div>
+        <div>
+            <label for="price" class="sr-only">Price</label>
+            <div class="relative">
+                <input type="text" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter price" formControlName="price" />
+            </div>
+        </div>
+        <div>
+            <select formControlName="categoryId" required>
+                <option value="" disabled selected>Chọn danh mục</option>
+                <option *ngFor="let item of categories" [value]="item._id">{{item.name}}</option>
+            </select>
+        </div>
+        <div>
+            <label for="description" class="sr-only">Description</label>
+            <div class="relative">
+                <textarea type="text" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter description" formControlName="description"></textarea>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+                [disabled]="!productForm.valid">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
