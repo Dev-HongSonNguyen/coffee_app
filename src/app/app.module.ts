@@ -10,6 +10,8 @@ import { ProductManagerComponent } from './pages/Admin/product-manager/product-m
 import { HomePageComponent } from './pages/Client/home-page/home-page.component';
 import { HttpClientModule } from "@angular/common/http"
 import { CategoryManagerComponent } from './pages/Admin/category-manager/category-manager.component';
+import { ProductAddComponent } from './pages/Admin/product-add/product-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,14 @@ import { CategoryManagerComponent } from './pages/Admin/category-manager/categor
     DashboardComponent,
     ProductManagerComponent,
     HomePageComponent,
-    CategoryManagerComponent
+    CategoryManagerComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
