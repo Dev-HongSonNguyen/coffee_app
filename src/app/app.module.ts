@@ -10,6 +10,7 @@ import { ProductManagerComponent } from './pages/Admin/product-manager/product-m
 import { HomePageComponent } from './pages/Client/home-page/home-page.component';
 import { HttpClientModule } from "@angular/common/http"
 import { CategoryManagerComponent } from './pages/Admin/category-manager/category-manager.component';
+import { ProductUpdateComponent } from './pages/Admin/product-update/product-update.component';
 import { ProductAddComponent } from './pages/Admin/product-add/product-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryAddComponent } from './pages/Admin/category-add/category-add.component';
@@ -22,6 +23,7 @@ import { CategoryAddComponent } from './pages/Admin/category-add/category-add.co
     ProductManagerComponent,
     HomePageComponent,
     CategoryManagerComponent,
+    ProductUpdateComponent,
     ProductAddComponent,
     CategoryAddComponent
   ],
