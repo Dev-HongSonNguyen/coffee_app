@@ -15,4 +15,10 @@ export class CategoryService {
   deleteCategory(id: string): Observable<ICategory>{
     return this.http.delete<ICategory>(`http://localhost:8080/categories/${id}`)
   }
+  addCategory(category: ICategory): Observable<ICategory>{
+    return this.http.post<ICategory>(`http://localhost:8080/categories` , category)
+  }
+  updateCategory(category: ICategory): Observable<ICategory>{
+    return this.http.put<ICategory>(`http://localhost:8080/categories/${category?._id}`, category)
+  }
 }

@@ -7,6 +7,7 @@ import { DashboardComponent } from './pages/Admin/dashboard/dashboard.component'
 import { ProductManagerComponent } from './pages/Admin/product-manager/product-manager.component';
 import { CategoryManagerComponent } from './pages/Admin/category-manager/category-manager.component';
 import { ProductAddComponent } from './pages/Admin/product-add/product-add.component';
+import { CategoryAddComponent } from './pages/Admin/category-add/category-add.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,9 @@ const routes: Routes = [
       },
       {
         path: "category", component: CategoryManagerComponent
+      },
+      {
+        path: "category/add", component: CategoryAddComponent
       }
     ] 
   }
