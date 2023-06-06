@@ -9,8 +9,8 @@ export class CategoryService {
 
   // constructor() { }
   constructor(private http: HttpClient) { }
-  getAllCategory(): Observable<ICategory[]>{
-    return this.http.get<ICategory[]>("http://localhost:8080/categories")
+  getAllCategory(): Observable<any>{
+    return this.http.get<any>("http://localhost:8080/categories")
   }
   getOneCategory(id: string): Observable<any>{
     return this.http.get<any>(`http://localhost:8080/categories/${id}`)
