@@ -12,6 +12,9 @@ export class CategoryService {
   getAllCategory(): Observable<ICategory[]>{
     return this.http.get<ICategory[]>("http://localhost:8080/categories")
   }
+  getOneCategory(id: string): Observable<any>{
+    return this.http.get<any>(`http://localhost:8080/categories/${id}`)
+  }
   deleteCategory(id: string): Observable<ICategory>{
     return this.http.delete<ICategory>(`http://localhost:8080/categories/${id}`)
   }
