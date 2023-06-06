@@ -9,6 +9,7 @@ import { CategoryManagerComponent } from './pages/Admin/category-manager/categor
 import { ProductUpdateComponent } from './pages/Admin/product-update/product-update.component';
 import { ProductAddComponent } from './pages/Admin/product-add/product-add.component';
 import { CategoryAddComponent } from './pages/Admin/category-add/category-add.component';
+import { CategoryUpdateComponent } from './pages/Admin/category-update/category-update.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,9 @@ const routes: Routes = [
       },
       {
         path: "category/add", component: CategoryAddComponent
+      },
+      {
+        path: "category/edit/:id", component: CategoryUpdateComponent
       }
     ] 
   }
