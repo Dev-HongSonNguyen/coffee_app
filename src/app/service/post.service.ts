@@ -18,4 +18,10 @@ export class PostService {
   deletePost(id: number): Observable<Ipost> {
     return this.http.delete<Ipost>(`http://localhost:8080/post/${id}`)
   }
+  addPost(post: Ipost): Observable<Ipost> {
+    return this.http.post<Ipost>(`http://localhost:8080/post`, post)
+  }
+  updatePost(post: Ipost): Observable<Ipost> {
+    return this.http.put<Ipost>(`http://localhost:8080/post/${post._id}`, post)
+  }
 }
