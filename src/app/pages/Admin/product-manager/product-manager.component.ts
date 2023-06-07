@@ -12,7 +12,7 @@ export class ProductManagerComponent {
   ngOnInit() {
     this.productService.getAllProduct().subscribe((data: any) => {
       const newData = data.products;
-      this.productData = newData.docs;
+      this.productData = newData;
     });
   }
   Delete(id: string) {
