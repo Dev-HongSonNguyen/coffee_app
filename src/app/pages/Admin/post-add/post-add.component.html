@@ -1,0 +1,41 @@
+<!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<h1 class="grid h-10 w-32 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">ADD POST</h1>
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+
+    <form  action="" (ngSubmit)="addPost()" class="mx-auto mb-0 mt-8 max-w-xl space-y-4" [formGroup]="postForm" >
+        <div>
+            <label for="name" class="sr-only">Name</label>
+            <div class="relative">
+                <input type="name" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter name" formControlName="name" required/>
+            </div>
+        </div>
+        <div>
+            <label for="image" class="sr-only">Image</label>
+            <div class="relative">
+                <input type="text" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter image" formControlName="image" required/>
+            </div>
+        </div>
+        <div>
+            <label for="description" class="sr-only">Description</label>
+            <div class="relative">
+                <textarea type="text" class="w-full rounded-lg border-gray-200 p-3 pe-12 text-sm shadow-sm"
+                    placeholder="Enter description" formControlName="description" required></textarea>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+            [disabled]="!postForm.valid"
+               >
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

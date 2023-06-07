@@ -11,6 +11,8 @@ import { ProductAddComponent } from './pages/Admin/product-add/product-add.compo
 import { CategoryAddComponent } from './pages/Admin/category-add/category-add.component';
 import { CategoryUpdateComponent } from './pages/Admin/category-update/category-update.component';
 import { PostManagerComponent } from './pages/Admin/post-manager/post-manager.component';
+import { PostAddComponent } from './pages/Admin/post-add/post-add.component';
+import { PostUpdateComponent } from './pages/Admin/post-update/post-update.component';
 
 const routes: Routes = [
   {
@@ -53,6 +55,12 @@ const routes: Routes = [
       // router post
       {
         path: "post", component: PostManagerComponent
+      },
+      {
+        path: "post/add", component: PostAddComponent
+      },
+      {
+        path: "post/edit/:id", component: PostUpdateComponent
       }
     ] 
   }
