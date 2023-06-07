@@ -15,6 +15,7 @@ import { ProductAddComponent } from './pages/Admin/product-add/product-add.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryAddComponent } from './pages/Admin/category-add/category-add.component';
 import { CategoryUpdateComponent } from './pages/Admin/category-update/category-update.component';
+import { PostManagerComponent } from './pages/Admin/post-manager/post-manager.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { CategoryUpdateComponent } from './pages/Admin/category-update/category-
     ProductUpdateComponent,
     ProductAddComponent,
     CategoryAddComponent,
-    CategoryUpdateComponent
+    CategoryUpdateComponent,
+    PostManagerComponent
   ],
   imports: [
     BrowserModule,

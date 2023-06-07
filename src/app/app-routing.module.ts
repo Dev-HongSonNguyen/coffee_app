@@ -10,6 +10,7 @@ import { ProductUpdateComponent } from './pages/Admin/product-update/product-upd
 import { ProductAddComponent } from './pages/Admin/product-add/product-add.component';
 import { CategoryAddComponent } from './pages/Admin/category-add/category-add.component';
 import { CategoryUpdateComponent } from './pages/Admin/category-update/category-update.component';
+import { PostManagerComponent } from './pages/Admin/post-manager/post-manager.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       {
         path: "dashboard", component: DashboardComponent
       },
+      // router product
       {
         path: "product", component: ProductManagerComponent
       },
@@ -38,6 +40,7 @@ const routes: Routes = [
         path: "product/add", component: ProductAddComponent
 
       },
+      // router category
       {
         path: "category", component: CategoryManagerComponent
       },
@@ -46,6 +49,10 @@ const routes: Routes = [
       },
       {
         path: "category/edit/:id", component: CategoryUpdateComponent
+      },
+      // router post
+      {
+        path: "post", component: PostManagerComponent
       }
     ] 
   }
