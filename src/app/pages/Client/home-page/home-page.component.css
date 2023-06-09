@@ -20,6 +20,8 @@
   font-size: 24px;
 }
 .carousel-caption a {
+  display: inline-block;
+  margin-top: 20px;
   color: #ffffff;
   text-decoration: none;
   background-color: #7c3a00;
@@ -38,6 +40,10 @@
 .category-elem {
   max-width: 1280px;
   margin: 0 auto;
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 .category h1 {
   text-align: center;
@@ -55,12 +61,6 @@
   text-align: center;
   margin: 0 auto;
   background: #7c3a00;
-}
-.category-elem {
-  padding-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
 }
 .category-elem-item {
   position: relative;
@@ -135,6 +135,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
+  padding-top: 30px;
 }
 .product-elem-item .product-elem-item-img img {
   width: 100%;
