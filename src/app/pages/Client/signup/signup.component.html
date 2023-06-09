@@ -14,33 +14,33 @@
             <h1>SIGN UP</h1><br>
             <label for="">Your-Name</label><br>
             <input type="text" formControlName="name"><br>
-            <div class=""
+            <div class="text-red-600 pb-[20px]"
                 *ngIf="formSignup.get('name')?.hasError('required') && (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)">
                 Name is required
             </div>
             <label for="">E-Mail Address</label><br>
             <input type="text" formControlName="email"><br>
-            <div class=""
+            <div class="text-red-600 pb-[20px]"
                 *ngIf="formSignup.get('email')?.hasError('required') && (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)">
                 Email is required
             </div>
-            <div class=""
+            <div class="text-red-600 pb-[20px]"
                 *ngIf="formSignup.get('email')?.hasError('email') && (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)">
                 Email invalid
             </div>
             <label for="">Password</label><br>
-            <input type="text" formControlName="password"><br>
-            <div class=""
+            <input type="password" formControlName="password"><br>
+            <div class="text-red-600 pb-[20px]"
                 *ngIf="formSignup.get('password')?.hasError('required') && (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)">
                 Password is required
             </div>
-            <div class=""
+            <div class="text-red-600 pb-[20px]"
                 *ngIf="formSignup.get('password')?.hasError('minlength') && (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)">
                 Password must be 6 characters or more
             </div>
             <label for="">Confirm-Password</label><br>
-            <input type="text" formControlName="confirmPassword"><br>
-            <div class=""
+            <input type="password" formControlName="confirmPassword"><br>
+            <div class="text-red-600 pb-[20px]"
                 *ngIf="formSignup?.hasError('notMatch') && (formSignup.get('confirmPassword')?.touched || formSignup.get('confirmPassword')?.dirty)">
                 Password not same
             </div>
