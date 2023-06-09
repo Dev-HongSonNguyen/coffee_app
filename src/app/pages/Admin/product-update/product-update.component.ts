@@ -14,7 +14,7 @@ import { ICategory } from 'src/app/interface/categories';
 export class ProductUpdateComponent {
   product: IProduct = {
     name: '',
-    image: '',
+    // image: '',
     price: 0,
     description: '',
     categoryId: ''
@@ -63,7 +63,7 @@ export class ProductUpdateComponent {
       const product: IProduct = {
         _id: this.product._id,
         name: this.productForm.value.name || 'notFound',
-        image: this.productForm.value.image || 'notFound',
+        // image: this.productForm.value.image || 'notFound',
         price: this.productForm.value.price || 0,
         description: this.productForm.value.description || 'notFound',
         categoryId: this.productForm.value.categoryId || 'notFound'

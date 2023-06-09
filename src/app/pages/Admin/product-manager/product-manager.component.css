@@ -1,3 +1,12 @@
 .content {
   padding-top: 20px;
 }
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Số dòng tối đa */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+  padding-top: 22px;
+}

@@ -1,23 +1,17 @@
-<h1 class="grid h-10 w-32 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">Update PRODUCT</h1>
+<h1 class="grid h-10 w-32 place-content-center rounded-lg bg-[#7c3a00] text-white text-xs">PRODUCT UPDATE</h1>
 <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 
-    <form action="#" class="mt-8 grid grid-cols-6 gap-6" (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
-        <div class="col-span-6 sm:col-span-3">
-          <label
-       
-            class="block text-sm font-medium text-gray-700"
-          >
-             Name
-          </label>
+  <form action="#" class="mt-8 grid grid-cols-6 gap-6" (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+    <div class="col-span-6 sm:col-span-3">
+      <label class="block text-sm font-medium text-gray-700">
+        Name
+      </label>
 
-          <input
-            type="text"
-            formControlName="name"
-            class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-          />
-        </div>
+      <input type="text" formControlName="name"
+        class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-[#7c3a00]" />
+    </div>
 
-        <div class="col-span-6 sm:col-span-3">
+    <!-- <div class="col-span-6 sm:col-span-3">
             <label
               
               class="block text-sm font-medium text-gray-700"
@@ -30,49 +24,35 @@
               formControlName="image"
               class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
             />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label
-              class="block text-sm font-medium text-gray-700"
-            >
-               Price
-            </label>
-  
-            <input
-              type="number"
-              formControlName="price"
-              class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div class="col-span-6 sm:col-span-3">
-            <label
-              class="block text-sm font-medium text-gray-700"
-            >
-               Description
-            </label>
-  
-            <input
-              type="text"
-              formControlName="description"
-              class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-          <div>
-            <label >Category:</label>
-            <select formControlName="categoryId">
-              <option value="">Select a category</option>
-              <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
-            </select>
-          </div>
+          </div> -->
+    <div class="col-span-6 sm:col-span-3">
+      <label class="block text-sm font-medium text-gray-700">
+        Price
+      </label>
 
-        
+      <input type="number" formControlName="price"
+        class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-[#7c3a00]" />
+    </div>
+    <div class="col-span-6 sm:col-span-3">
+      <label class="block text-sm font-medium text-gray-700">
+        Description
+      </label>
 
-        <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-          <button
-            class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+      <textarea type="text" formControlName="description"
+        class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-[#7c3a00]"></textarea>
+    </div>
+    <div>
+      <label>Category:</label>
+      <select formControlName="categoryId"
+        class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-[#7c3a00]">
+        <option value="">Select a category</option>
+        <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+      </select>
+    </div>
+    <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+      <button class="grid h-10 w-32 place-content-center rounded-lg bg-[#7c3a00] text-white text-xs">
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
