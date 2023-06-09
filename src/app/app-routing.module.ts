@@ -15,6 +15,7 @@ import { PostAddComponent } from './pages/Admin/post-add/post-add.component';
 import { PostUpdateComponent } from './pages/Admin/post-update/post-update.component';
 import { SigninComponent } from './pages/Client/signin/signin.component';
 import { SignupComponent } from './pages/Client/signup/signup.component';
+import { CartComponent } from './pages/Client/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       },
       {
         path: "signup", component: SignupComponent
+      },
+      // router cart
+      {
+        path: "cart", component: CartComponent
       }
     ]
   },
@@ -69,7 +74,7 @@ const routes: Routes = [
       },
       {
         path: "post/edit/:id", component: PostUpdateComponent
-      }
+      },
     ] 
   }
 ];
