@@ -21,6 +21,7 @@ import { PostUpdateComponent } from './pages/Admin/post-update/post-update.compo
 import { SigninComponent } from './pages/Client/signin/signin.component';
 import { SignupComponent } from './pages/Client/signup/signup.component';
 import { LocalStorageService  } from 'ngx-webstorage';
+import { CartComponent } from './pages/Client/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { LocalStorageService  } from 'ngx-webstorage';
     PostAddComponent,
     PostUpdateComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
