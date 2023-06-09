@@ -20,7 +20,6 @@ import { PostAddComponent } from './pages/Admin/post-add/post-add.component';
 import { PostUpdateComponent } from './pages/Admin/post-update/post-update.component';
 import { SigninComponent } from './pages/Client/signin/signin.component';
 import { SignupComponent } from './pages/Client/signup/signup.component';
-import { LocalStorageService  } from 'ngx-webstorage';
 import { CartComponent } from './pages/Client/cart/cart.component';
 @NgModule({
   declarations: [
@@ -49,7 +48,7 @@ import { CartComponent } from './pages/Client/cart/cart.component';
     ReactiveFormsModule
   ],
   providers: [
-    LocalStorageService 
+    
   ],
   bootstrap: [AppComponent]
 })
