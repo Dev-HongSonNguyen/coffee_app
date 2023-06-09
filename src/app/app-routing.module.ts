@@ -13,12 +13,20 @@ import { CategoryUpdateComponent } from './pages/Admin/category-update/category-
 import { PostManagerComponent } from './pages/Admin/post-manager/post-manager.component';
 import { PostAddComponent } from './pages/Admin/post-add/post-add.component';
 import { PostUpdateComponent } from './pages/Admin/post-update/post-update.component';
+import { SigninComponent } from './pages/Client/signin/signin.component';
+import { SignupComponent } from './pages/Client/signup/signup.component';
 
 const routes: Routes = [
   {
     path: "", component: LayoutClientComponent, children:[
       {
         path: "", component: HomePageComponent
+      },
+      {
+        path: "signin", component: SigninComponent
+      },
+      {
+        path: "signup", component: SignupComponent
       }
     ]
   },

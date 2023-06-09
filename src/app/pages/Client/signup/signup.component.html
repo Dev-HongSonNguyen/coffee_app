@@ -1,0 +1,50 @@
+<div class="header-auth">
+    <div class="header-auth-elem">
+        <div class="header-auth-elem-box">
+            <a href="" class="header-auth-elem-box-home">
+                <i class="fa-solid fa-house"></i></a>
+            <span class="header-auth-elem-box-auth">Auth</span>
+            <a href="">Sign Up</a>
+        </div>
+    </div>
+</div>
+<div class="header-auth-form">
+    <div class="header-auth-form-elem">
+        <form action="" [formGroup]="formSignup" (ngSubmit)="onSubmit()">
+            <h1>SIGN UP</h1><br>
+            <label for="">Your-Name</label><br>
+            <input type="text" formControlName="name"><br>
+            <div class=""
+                *ngIf="formSignup.get('name')?.hasError('required') && (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)">
+                Name is required
+            </div>
+            <label for="">E-Mail Address</label><br>
+            <input type="text" formControlName="email"><br>
+            <div class=""
+                *ngIf="formSignup.get('email')?.hasError('required') && (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)">
+                Email is required
+            </div>
+            <div class=""
+                *ngIf="formSignup.get('email')?.hasError('email') && (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)">
+                Email invalid
+            </div>
+            <label for="">Password</label><br>
+            <input type="text" formControlName="password"><br>
+            <div class=""
+                *ngIf="formSignup.get('password')?.hasError('required') && (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)">
+                Password is required
+            </div>
+            <div class=""
+                *ngIf="formSignup.get('password')?.hasError('minlength') && (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)">
+                Password must be 6 characters or more
+            </div>
+            <label for="">Confirm-Password</label><br>
+            <input type="text" formControlName="confirmPassword"><br>
+            <div class=""
+                *ngIf="formSignup?.hasError('notMatch') && (formSignup.get('confirmPassword')?.touched || formSignup.get('confirmPassword')?.dirty)">
+                Password not same
+            </div>
+            <button type="submit">SUBMIT</button><br>
+        </form>
+    </div>
+</div>
