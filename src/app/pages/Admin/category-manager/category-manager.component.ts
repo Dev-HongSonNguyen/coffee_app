@@ -16,9 +16,7 @@ export class CategoryManagerComponent {
     })
   }
   Delete(id: string) {
-    // console.log("idhihih", id);
-    // return
-    if (confirm('bạn có muốn xoá danh mục này không')) {
+    if (confirm('Bạn không có quyền xóa danh mục !')) {
       this.categoryService.deleteCategory(id).subscribe(() => {
         this.categoryData = this.categoryData.filter(
           (item: any) => item?._id !== id

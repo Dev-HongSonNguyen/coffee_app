@@ -19,13 +19,12 @@ export class ProductAddComponent {
 
     this.categoryService.getAllCategory().subscribe((item: any)=>{
       this.categories = item.category
-      console.log(this.categories);
     })
   }
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
       name: [''],
-      image: [''],
+      // image: [''],
       price: [0],
       description: [''],
       categoryId: [''],
@@ -37,7 +36,7 @@ export class ProductAddComponent {
      }
      const product: IProduct={
       name: this.productForm.value.name || 'notFound',
-      image: this.productForm.value.image || 'notFound',
+      // image: this.productForm.value.image || 'notFound',
       price: this.productForm.value.price || 0,
       description: this.productForm.value.description || 'notFound',
       categoryId: this.productForm.value.categoryId || 'notFound',
