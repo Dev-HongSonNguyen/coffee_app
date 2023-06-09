@@ -10,12 +10,12 @@
 </div>
 <div class="header-auth-form">
     <div class="header-auth-form-elem">
-        <form action="">
+        <form action="" [formGroup]="formSignin" (ngSubmit)="onSubmit()">
             <h1>SIGN IN</h1><br>
             <label for="">E-Mail Address</label><br>
-            <input type="text"><br>
+            <input type="text" formControlName="email"><br>
             <label for="">Password</label><br>
-            <input type="text"><br>
+            <input type="text" formControlName="password"><br>
             <button type="submit">SUBMIT</button><br>
         </form>
     </div>

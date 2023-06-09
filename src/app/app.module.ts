@@ -20,6 +20,7 @@ import { PostAddComponent } from './pages/Admin/post-add/post-add.component';
 import { PostUpdateComponent } from './pages/Admin/post-update/post-update.component';
 import { SigninComponent } from './pages/Client/signin/signin.component';
 import { SignupComponent } from './pages/Client/signup/signup.component';
+import { LocalStorageService  } from 'ngx-webstorage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,9 @@ import { SignupComponent } from './pages/Client/signup/signup.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    LocalStorageService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
