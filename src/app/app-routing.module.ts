@@ -16,6 +16,7 @@ import { PostUpdateComponent } from './pages/Admin/post-update/post-update.compo
 import { SigninComponent } from './pages/Client/signin/signin.component';
 import { SignupComponent } from './pages/Client/signup/signup.component';
 import { CartComponent } from './pages/Client/cart/cart.component';
+import { DetailProductComponent } from './pages/Client/detail-product/detail-product.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       },
       {
         path: "signup", component: SignupComponent
+      },
+      // router product
+      {
+        path: "product/:id", component: DetailProductComponent
       },
       // router cart
       {

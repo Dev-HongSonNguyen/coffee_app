@@ -1,0 +1,36 @@
+.header-auth {
+  background-color: #111111;
+}
+.header-auth-elem {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.header-auth-elem-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-auth-elem-box a {
+  font-size: 14px;
+  color: #ffffff !important;
+}
+.header-auth-elem-box span {
+  color: #ffffff;
+}
+.header-auth-elem-box-auth::after {
+  content: "|";
+  padding: 0 5px 0 5px;
+  top: -1px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+}
+.header-auth-elem-box-home::after {
+  content: "|";
+  padding: 0 5px 0 5px;
+  top: -1px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+}
