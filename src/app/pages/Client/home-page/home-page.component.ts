@@ -14,7 +14,7 @@ export class HomePageComponent {
     this.categoryService.getAllCategory().subscribe((data: any) => {
       this.homeCateData = data.category
       console.log(data.category);
-      
+
     })
   }
 }

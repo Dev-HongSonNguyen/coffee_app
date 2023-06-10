@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ICategory } from 'src/app/interface/categories';
 import { CategoryService } from 'src/app/service/category.service';
+import { UploadService } from 'src/app/service/upload.service';
 
 @Component({
   selector: 'app-category-add',
@@ -11,9 +12,9 @@ import { CategoryService } from 'src/app/service/category.service';
 })
 export class CategoryAddComponent {
   categoryForm: any;
+  selectedFile!: File[];
 
-
-  constructor(private categoryService: CategoryService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private categoryService: CategoryService, private router: Router, private formBuilder: FormBuilder, private uploadService: UploadService) {
 
   }
   ngOnInit(): void {
@@ -28,9 +29,16 @@ export class CategoryAddComponent {
       name: this.categoryForm.value.name || 'notFound',
       image: this.categoryForm.value.image || 'notFound'
     }
-    this.categoryService.addCategory(category).subscribe(() => {
-      alert("Thêm danh mục thành công")
-      this.router.navigate(['admin/category'])
+    this.uploadService.uploadImage(this.selectedFile).subscribe((data)=>{
+      const imageUrl = data.urls[0].url
+      category.image = imageUrl
+      this.categoryService.addCategory(category).subscribe(()=>{
+        alert("Thêm sản phẩm thành công !")
+        this.router.navigate(['admin/category'])
+       })
     })
+  }
+  onFileSelect(event: any){
+    this.selectedFile = event.target.files
   }
 }
