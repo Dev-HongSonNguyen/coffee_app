@@ -8,15 +8,15 @@
             </label>
 
             <input type="text" formControlName="name"
-                class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-[#7c3a00]" />
+                class="w-full mt-1 p-2 text-sm text-gray-700 border border-gray-200 rounded-lg outline-[#7c3a00]" />
         </div>
         <div class="col-span-6 sm:col-span-3">
             <label class="block text-sm font-medium text-gray-700">
                 Image
             </label>
 
-            <input type="text" formControlName="image"
-                class="mt-1 p-2 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-[#7c3a00]" />
+            <input [multiple]="true" type="file" (change)="onFileSelect($event)" formControlName="image"
+                class="mt-1 p-2 text-[10px] text-gray-700 border border-gray-200 rounded-lg" />
         </div>
         <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button class="grid h-10 w-32 place-content-center rounded-lg bg-[#7c3a00] text-white text-xs">
