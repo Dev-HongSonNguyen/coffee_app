@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ipost } from '../interface/post';
@@ -7,21 +7,29 @@ import { Ipost } from '../interface/post';
   providedIn: 'root'
 })
 export class PostService {
-
+  API_URL_POST:string = "http://localhost:8080/post"
+  token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   constructor(private http: HttpClient) { }
   getAllPost(): Observable<any>{
-    return this.http.get<any>("http://localhost:8080/post")
+    return this.http.get<any>(`${this.API_URL_POST}`)
   }
   getOnePost(id: number): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/post/${id}`)
+    return this.http.get<any>(`${this.API_URL_POST}/${id}`)
   }
   deletePost(id: number): Observable<Ipost> {
-    return this.http.delete<Ipost>(`http://localhost:8080/post/${id}`)
+    return this.http.delete<Ipost>(`${this.API_URL_POST}/${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    })
   }
   addPost(post: Ipost): Observable<Ipost> {
-    return this.http.post<Ipost>(`http://localhost:8080/post`, post)
+    return this.http.post<Ipost>(`${this.API_URL_POST}`, post, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    })
   }
   updatePost(post: Ipost): Observable<Ipost> {
-    return this.http.put<Ipost>(`http://localhost:8080/post/${post._id}`, post)
+    return this.http.put<Ipost>(`${this.API_URL_POST}/${post._id}`, post, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.token}`)
+    })
   }
 }
+
