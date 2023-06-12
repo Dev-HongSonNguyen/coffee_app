@@ -45,10 +45,10 @@
                     <ul class="header-nav-bottom-elem-left-big">
                         <li><a routerLink="">HOME</a></li>
                         <li class="header-nav-bottom-elem-left-big-cate"><a routerLink="#">CATEGORY</a>
-                            <ul class="header-nav-bottom-elem-left-small">
-                                <li><a routerLink="#">CAMPUCHINO</a></li>
-                                <li><a routerLink="#">CAMPUCHINO</a></li>
-                                <li><a routerLink="#">CAMPUCHINO</a></li>
+                            <ul class="header-nav-bottom-elem-left-small" *ngIf="categoryData && categoryData.length">
+                                <li *ngFor="let cate of categoryData">
+                                    <a routerLink="#">{{cate.name}}</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a routerLink="#">ESPRESSO</a></li>

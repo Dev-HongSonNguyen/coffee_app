@@ -18,24 +18,17 @@ export class HomePageComponent {
     private productService: ProductService
   ) {}
   
-  
-  
   ngOnInit() {
     this.categoryService.getAllCategory().subscribe((data: any) => {
       this.homeCateData = data.category;
-      console.log(data.category);
     });
 
     this.postService.getAllPost().subscribe((item: any) => {
       this.homePostData = item?.post;
-      console.log(this.homePostData);
-      
     });
 
     this.productService.getAllProduct().subscribe((item: any) => {
       this.homeProductData = item?.products
-      console.log(this.homeProductData);
-      
     })
 
     

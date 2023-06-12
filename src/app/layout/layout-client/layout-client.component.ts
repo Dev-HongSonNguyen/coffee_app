@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
   selector: 'app-layout-client',
@@ -9,12 +10,16 @@ import { Router } from '@angular/router';
 })
 export class LayoutClientComponent {
   isLoggedIn: boolean = false;
-  constructor(private navigate: Router){}
+  categoryData: any
+  constructor(private navigate: Router, private cateService: CategoryService){}
   ngOnInit() {
     // Kiểm tra xem có tài khoản người dùng đã đăng nhập trong sessionStorage hay không
     if (sessionStorage.getItem('user')) {
       this.isLoggedIn = true;
     }
+    this.cateService.getAllCategory().subscribe((data:any)=>{
+      this.categoryData = data.category
+    })
   }
   logOut() {
     sessionStorage.removeItem('user');
