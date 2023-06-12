@@ -8,7 +8,7 @@
         </div>
     </div>
 </div>
-<div class="header-auth-form">
+<!-- <div class="header-auth-form">
     <div class="header-auth-form-elem">
         <form action="" [formGroup]="formSignup" (ngSubmit)="onSubmit()">
             <h1>SIGN UP</h1><br>
@@ -47,4 +47,116 @@
             <button type="submit">SUBMIT</button><br>
         </form>
     </div>
-</div>
+</div> -->
+<!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+-->
+<section class="bg-white">
+    <div class="max-w-[800px] mx-auto bg-[#7c3a00] ">
+        <h1 class="text-center text-white text-[38px] pt-[30px]">SIGN UP</h1><br>
+        <main class="flex items-center justify-center px-8 sm:px-12 lg:col-span-7 lg:px-16 lg:pb-12 xl:col-span-6">
+            <div class="max-w-xl lg:max-w-3xl">
+                <form action="#" class="grid grid-cols-6 gap-6" [formGroup]="formSignup" (ngSubmit)="onSubmit()">
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for=" FirstName" class="block text-sm font-medium text-white">
+                            First Name
+                        </label>
+
+                        <input type="text" id="FirstName" name="first_name" formControlName="name"
+                            class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm p-2 text-[#7c3a00] outline-none shadow-sm" />
+                        <div class="text-white text-[12px]"
+                            *ngIf="formSignup.get('name')?.hasError('required') && (formSignup.get('name')?.touched || formSignup.get('name')?.dirty)">
+                            Name is required
+                        </div>
+                    </div>
+
+                    <div class="col-span-6">
+                        <label for="Email" class="block text-sm font-medium text-white">
+                            E-Mail Address
+                        </label>
+
+                        <input type="email" id="Email" name="email" formControlName="email"
+                            class="mt-1 w-full rounded-md border-gray-200 p-2 text-[#7c3a00] outline-none text-sm shadow-sm" />
+                        <div class="text-white text-[12px]"
+                            *ngIf="formSignup.get('email')?.hasError('required') && (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)">
+                            Email is required
+                        </div>
+                        <div class="text-white text-[12px]"
+                            *ngIf="formSignup.get('email')?.hasError('email') && (formSignup.get('email')?.touched || formSignup.get('email')?.dirty)">
+                            Email invalid
+                        </div>
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="Password" class="block text-sm font-medium text-white">
+                            Password
+                        </label>
+
+                        <input type="password" id="Password" name="password" formControlName="password"
+                            class="mt-1 w-full rounded-md border-gray-200 p-2 text-[#7c3a00] outline-none text-sm shadow-sm" />
+                        <div class="text-white text-[12px]"
+                            *ngIf="formSignup.get('password')?.hasError('required') && (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)">
+                            Password is required
+                        </div>
+                        <div class="text-white text-[12px]"
+                            *ngIf="formSignup.get('password')?.hasError('minlength') && (formSignup.get('password')?.touched || formSignup.get('password')?.dirty)">
+                            Password must be 6 characters or more
+                        </div>
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="PasswordConfirmation" class="block text-sm font-medium text-white">
+                            Password Confirmation
+                        </label>
+
+                        <input type="password" id="PasswordConfirmation" name="password_confirmation"
+                            formControlName="confirmPassword"
+                            class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm p-2 text-[#7c3a00] outline-none shadow-sm" />
+                        <div class="text-white text-[12px]"
+                            *ngIf="formSignup?.hasError('notMatch') && (formSignup.get('confirmPassword')?.touched || formSignup.get('confirmPassword')?.dirty)">
+                            Password not same
+                        </div>
+                    </div>
+
+                    <div class="col-span-6">
+                        <label for="MarketingAccept" class="flex gap-4 items-center">
+                            <input type="checkbox" id="MarketingAccept" name="marketing_accept"
+                                class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm" />
+
+                            <span class="text-sm p-2 text-white">
+                                I want to receive emails about events, product updates and
+                                company announcements.
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="col-span-6">
+                        <p class="text-sm text-white">
+                            By creating an account, you agree to our
+                            <a routerLink="#" class="text-white underline">
+                                terms and conditions
+                            </a>
+                            and
+                            <a routerLink="#" class="text-white underline">privacy policy</a>.
+                        </p>
+                    </div>
+
+                    <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+                        <button
+                            class="inline-block shrink-0 rounded-md border bg-white px-12 py-3 text-sm font-medium text-[#7c3a00]">
+                            Create an account
+                        </button>
+
+                        <p class="mt-4 text-sm text-white sm:mt-0">
+                            Already have an account?
+                            <a routerLink="/signin" class="text-white underline">Log in</a>.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</section>

@@ -37,6 +37,8 @@
 /* Header-auth-form */
 .header-auth-form {
   background-color: #ffffff;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .header-auth-form-elem {
   display: flex;
@@ -44,28 +46,17 @@
 }
 .header-auth-form-elem form {
   background-color: #7c3a00;
-  padding: 50px;
+  padding: 70px;
 }
 .header-auth-form-elem form h1 {
   margin: 0px;
   color: #ffffff;
   font-size: 38px;
+  text-align: center;
 }
 .header-auth-form-elem form label {
   color: #ffffff;
-  padding-bottom: 5px;
 }
 .header-auth-form-elem form input {
   width: 500px;
-  padding: 10px;
-  outline: none;
-  margin-bottom: 10px;
-}
-.header-auth-form-elem form button {
-  color: #7c3a00;
-  background-color: #ffffff;
-  border: none;
-  padding: 5px 20px;
-  font-weight: bold;
-  margin-top: 50px;
 }
