@@ -15,6 +15,11 @@ export class SignupComponent {
     confirmPassword: ['', [Validators.required]],
   }, {validators: this.checkPassword})
   constructor (private formBuilder: FormBuilder,private authService: AuthService, private navigate: Router){}
+  ngOnInit(){
+    if(sessionStorage.getItem('user')){
+      this.navigate.navigate([""])
+    }
+  }
   checkPassword(form: FormGroup){
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;

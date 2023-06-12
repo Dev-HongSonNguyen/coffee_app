@@ -12,11 +12,39 @@
     <div class="header-auth-form-elem">
         <form action="" [formGroup]="formSignin" (ngSubmit)="onSubmit()">
             <h1>SIGN IN</h1><br>
-            <label for="">E-Mail Address</label><br>
-            <input type="text" formControlName="email"><br>
-            <label for="">Password</label><br>
-            <input type="password" formControlName="password"><br>
-            <button type="submit">SUBMIT</button><br>
+            <div class="pb-[20px]">
+                <label for="">E-Mail Address</label><br>
+                <input type="text"
+                    class="mt-1 w-full rounded-md border-gray-200 p-2 text-[#7c3a00] outline-none text-sm shadow-sm"
+                    formControlName="email"><br>
+                <div class="text-white text-[12px]"
+                    *ngIf="formSignin.get('email')?.hasError('required') && (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)">
+                    Email is required
+                </div>
+                <div class="text-white text-[12px]"
+                    *ngIf="formSignin.get('email')?.hasError('email') && (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)">
+                    Email invalid
+                </div>
+            </div>
+            <div class="">
+                <label for="">Password</label><br>
+                <input class="mt-1 w-full rounded-md border-gray-200 p-2 text-[#7c3a00] outline-none text-sm shadow-sm"
+                    type="password" formControlName="password"><br>
+                <div class="text-white text-[12px]"
+                    *ngIf="formSignin.get('password')?.hasError('required') && (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)">
+                    Password is required
+                </div>
+                <div class="text-white text-[12px]"
+                    *ngIf="formSignin.get('password')?.hasError('minlength') && (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)">
+                    Password must be 6 characters or more
+                </div>
+            </div>
+            <p class="mt-4 text-sm text-white sm:mt-0">
+                You are not have account?
+                <a routerLink="/signup" class="text-white underline">Create account</a>.
+            </p>
+            <button type="submit"
+                class="inline-block shrink-0 rounded-md bg-white text-sm font-medium px-4 py-2 text-[#7c3a00] mt-[20px]">Submit</button><br>
         </form>
     </div>
 </div>
