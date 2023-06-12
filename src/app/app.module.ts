@@ -8,7 +8,7 @@ import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.compone
 import { DashboardComponent } from './pages/Admin/dashboard/dashboard.component';
 import { ProductManagerComponent } from './pages/Admin/product-manager/product-manager.component';
 import { HomePageComponent } from './pages/Client/home-page/home-page.component';
-import { HttpClientModule } from "@angular/common/http"
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http"
 import { CategoryManagerComponent } from './pages/Admin/category-manager/category-manager.component';
 import { ProductUpdateComponent } from './pages/Admin/product-update/product-update.component';
 import { ProductAddComponent } from './pages/Admin/product-add/product-add.component';
@@ -22,6 +22,7 @@ import { SigninComponent } from './pages/Client/signin/signin.component';
 import { SignupComponent } from './pages/Client/signup/signup.component';
 import { CartComponent } from './pages/Client/cart/cart.component';
 import { DetailProductComponent } from './pages/Client/detail-product/detail-product.component';
+import { AuthInterceptor } from './auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,8 +50,11 @@ import { DetailProductComponent } from './pages/Client/detail-product/detail-pro
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [
-    
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })

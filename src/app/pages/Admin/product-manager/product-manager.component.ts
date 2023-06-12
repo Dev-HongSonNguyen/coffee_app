@@ -11,8 +11,6 @@ export class ProductManagerComponent {
   constructor(private productService: ProductService) {}
   ngOnInit() {
     this.productService.getAllProduct().subscribe((data: any) => {
-      console.log(data);
-      
       const newData = data.products;
       this.productData = newData;
     });
