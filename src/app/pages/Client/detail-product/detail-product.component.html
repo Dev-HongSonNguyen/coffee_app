@@ -4,56 +4,15 @@
             <a href="" class="header-auth-elem-box-home">
                 <i class="fa-solid fa-house"></i></a>
             <span class="header-auth-elem-box-auth">Detail</span>
-            <a href="">Fun Product That Does Something Cool</a>
+            <a href="">{{product.name}}</a>
         </div>
     </div>
 </div>
-<!--
-  This component uses @tailwindcss/forms and @tailwindcss/typography
-
-  yarn add @tailwindcss/forms @tailwindcss/typography
-  npm install @tailwindcss/forms @tailwindcss/typography
-
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')]
-
-  @layer components {
-    .no-spinner {
-      -moz-appearance: textfield;
-    }
-
-    .no-spinner::-webkit-outer-spin-button,
-    .no-spinner::-webkit-inner-spin-button {
-      margin: 0;
-      -webkit-appearance: none;
-    }
-  }
--->
-
 <section>
     <div class="relative mx-auto max-w-screen-xl px-4 py-8">
         <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
             <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
-                <img alt="Image"
-                    src="{{product.image}}"
-                    class="aspect-square w-full rounded-xl " />
-
-                <!-- <div class="grid grid-cols-2 gap-4 lg:mt-4">
-                    <img alt="Les Paul"
-                        src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                        class="aspect-square w-full rounded-xl object-cover" />
-
-                    <img alt="Les Paul"
-                        src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                        class="aspect-square w-full rounded-xl object-cover" />
-
-                    <img alt="Les Paul"
-                        src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                        class="aspect-square w-full rounded-xl object-cover" />
-
-                    <img alt="Les Paul"
-                        src="https://images.unsplash.com/photo-1456948927036-ad533e53865c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                        class="aspect-square w-full rounded-xl object-cover" />
-                </div> -->
+                <img alt="Image" src="{{product.image}}" class="aspect-square w-full rounded-xl " />
             </div>
 
             <div class="top-0">
@@ -63,7 +22,7 @@
                 </strong>
 
                 <div class="mt-8 flex justify-between" *ngIf="product">
-                    <div class="max-w-[35ch] space-y-2" >
+                    <div class="max-w-[35ch] space-y-2">
                         <h1 class="text-xl font-bold sm:text-2xl" formControlName="name">
                             {{product.name}}
                         </h1>
@@ -112,62 +71,9 @@
                             {{product.description}}
                         </p>
                     </div>
-
-                    <!-- <button class="mt-2 text-sm font-medium underline">Read More</button> -->
                 </div>
 
                 <form class="mt-8">
-                    <!-- <fieldset class="mt-4">
-                        <legend class="mb-1 text-sm font-medium">Size</legend>
-
-                        <div class="flex flex-wrap gap-1">
-                            <label for="size_xs" class="cursor-pointer">
-                                <input type="radio" name="size" id="size_xs" class="peer sr-only" />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                                    XS
-                                </span>
-                            </label>
-
-                            <label for="size_s" class="cursor-pointer">
-                                <input type="radio" name="size" id="size_s" class="peer sr-only" />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                                    S
-                                </span>
-                            </label>
-
-                            <label for="size_m" class="cursor-pointer">
-                                <input type="radio" name="size" id="size_m" class="peer sr-only" />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                                    M
-                                </span>
-                            </label>
-
-                            <label for="size_l" class="cursor-pointer">
-                                <input type="radio" name="size" id="size_l" class="peer sr-only" />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                                    L
-                                </span>
-                            </label>
-
-                            <label for="size_xl" class="cursor-pointer">
-                                <input type="radio" name="size" id="size_xl" class="peer sr-only" />
-
-                                <span
-                                    class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
-                                    XL
-                                </span>
-                            </label>
-                        </div>
-                    </fieldset> -->
-
                     <div class="mt-8 flex gap-4">
                         <div>
                             <label for="quantity" class="sr-only">Qty</label>

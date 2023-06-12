@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/service/category.service';
 import { PostService } from 'src/app/service/post.service';
-import * as moment from 'moment';
 import { NgFor } from '@angular/common';
 import { ProductService } from 'src/app/service/product.service';
 @Component({
