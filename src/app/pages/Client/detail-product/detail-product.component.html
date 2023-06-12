@@ -33,8 +33,8 @@
     <div class="relative mx-auto max-w-screen-xl px-4 py-8">
         <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
             <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
-                <img alt="Les Paul"
-                    src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868903/Duan_Angular/image/product2_db1vfy.jpg"
+                <img alt="Image"
+                    src="{{product.image}}"
                     class="aspect-square w-full rounded-xl object-cover" />
 
                 <!-- <div class="grid grid-cols-2 gap-4 lg:mt-4">
@@ -62,10 +62,10 @@
                     Pre Order
                 </strong>
 
-                <div class="mt-8 flex justify-between">
-                    <div class="max-w-[35ch] space-y-2">
-                        <h1 class="text-xl font-bold sm:text-2xl">
-                            Fun Product That Does Something Cool
+                <div class="mt-8 flex justify-between" *ngIf="product">
+                    <div class="max-w-[35ch] space-y-2" >
+                        <h1 class="text-xl font-bold sm:text-2xl" formControlName="name">
+                            {{product.name}}
                         </h1>
 
                         <p class="text-sm">Highest Rated Product</p>
@@ -103,16 +103,13 @@
                         </div>
                     </div>
 
-                    <p class="text-lg font-bold text-[#7c3a00]">$119.99</p>
+                    <p class="text-lg font-bold text-[#7c3a00]">${{product.price}}</p>
                 </div>
 
                 <div class="mt-4">
                     <div class="prose max-w-none">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                            veniam dicta beatae eos ex error culpa delectus rem tenetur,
-                            architecto quam nesciunt, dolor veritatis nisi minus inventore,
-                            rerum at recusandae?
+                            {{product.description}}
                         </p>
                     </div>
 

@@ -404,8 +404,10 @@
   overflow: hidden;
 }
 .blog-elem-item-image img {
-  width: 100%;
+  width: 297.5px;
+  height: 297.5px;
   transition: transform 2s ease;
+  width: 100%;
 }
 .blog-date {
   position: absolute;
@@ -429,6 +431,7 @@
   color: #111111 !important;
   display: block;
   text-decoration: none;
+  font-size: 20px;
 }
 .blog-elem-item-content-comment {
   color: #7c3a00 !important;
