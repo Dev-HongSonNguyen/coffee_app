@@ -23,6 +23,7 @@ import { SignupComponent } from './pages/Client/signup/signup.component';
 import { CartComponent } from './pages/Client/cart/cart.component';
 import { DetailProductComponent } from './pages/Client/detail-product/detail-product.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { AuthInterceptor } from './auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

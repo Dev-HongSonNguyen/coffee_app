@@ -69,7 +69,20 @@
         <li><a href="#">New Arrivals</a></li>
     </ul> -->
     <div class="product-elem">
-        <div class="product-elem-item">
+        <div *ngFor ="let pro of homeProduct , let i = index" class="product-elem-item">
+            <div class="product-elem-item-img">
+                <a href="#">
+                    <img src="{{pro.image}}"
+                        alt="">
+                </a>
+            </div>
+            <div class="product-elem-item-content">
+                <a href="#">{{pro.name}}</a>
+                <p><span>$</span>{{pro.price}}</p>
+                <button (click)="addtoCart(pro)">ADD TO CART</button>
+            </div>
+        </div>
+        <!-- <div class="product-elem-item">
             <div class="product-elem-item-img">
                 <a href="#">
                     <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868902/Duan_Angular/image/product1_i5bcts.jpg"
@@ -94,20 +107,7 @@
                 <p><span>$</span>122.00</p>
                 <button>ADD TO CART</button>
             </div>
-        </div>
-        <div class="product-elem-item">
-            <div class="product-elem-item-img">
-                <a href="#">
-                    <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868902/Duan_Angular/image/product1_i5bcts.jpg"
-                        alt="">
-                </a>
-            </div>
-            <div class="product-elem-item-content">
-                <a href="#">HTC Touch HD</a>
-                <p><span>$</span>122.00</p>
-                <button>ADD TO CART</button>
-            </div>
-        </div>
+        </div> -->
     </div>
 
 </div>
