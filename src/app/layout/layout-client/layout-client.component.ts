@@ -19,6 +19,8 @@ export class LayoutClientComponent {
     }
     this.cateService.getAllCategory().subscribe((data:any)=>{
       this.categoryData = data.category
+      console.log(this.categoryData);
+      
     })
   }
   logOut() {
