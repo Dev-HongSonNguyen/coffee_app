@@ -2,6 +2,7 @@ import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartapiService } from 'src/app/service/cart.service';
+import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
   selector: 'app-layout-client',
@@ -13,8 +14,10 @@ export class LayoutClientComponent {
   totalItemNumber: number = 0;
   constructor(
     private navigate: Router,
-    private cartService: CartapiService
+    private cartService: CartapiService,
+    private cateService: CategoryService
   ) { }
+  categoryData: any
   ngOnInit() {
     // Kiểm tra xem có tài khoản người dùng đã đăng nhập trong sessionStorage hay không
     this.cartService.getAllCart().subscribe((data : any) => {
@@ -23,6 +26,9 @@ export class LayoutClientComponent {
     if (sessionStorage.getItem('user')) {
       this.isLoggedIn = true;
     }
+    this.cateService.getAllCategory().subscribe((data:any)=>{
+      this.categoryData = data.category
+    })
   }
   logOut() {
     sessionStorage.removeItem('user');

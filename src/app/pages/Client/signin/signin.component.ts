@@ -15,6 +15,11 @@ export class SigninComponent {
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
   constructor (private authService: AuthService, private formBuilder: FormBuilder, private navigate: Router){}
+  ngOnInit(){
+    if(sessionStorage.getItem('user')){
+      this.navigate.navigate([""])
+    }
+  }
   onSubmit(){
     if(this.formSignin.valid){
       this.authService.signin(this.formSignin.value).subscribe((data)=>{
@@ -24,7 +29,6 @@ export class SigninComponent {
           JSON.stringify(this.formSignin)
         );
         alert("Đăng nhập thành công !")
-        // location.reload();
         this.navigate.navigate([''])
       })
     }

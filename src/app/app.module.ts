@@ -24,6 +24,9 @@ import { CartComponent } from './pages/Client/cart/cart.component';
 import { DetailProductComponent } from './pages/Client/detail-product/detail-product.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { FormsModule } from '@angular/forms';
+import { SliderManagerComponent } from './pages/Admin/slider-manager/slider-manager.component';
+import { SliderAddComponent } from './pages/Admin/slider-add/slider-add.component';
+import { SliderUpdateComponent } from './pages/Admin/slider-update/slider-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,10 @@ import { FormsModule } from '@angular/forms';
     SigninComponent,
     SignupComponent,
     CartComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    SliderManagerComponent,
+    SliderAddComponent,
+    SliderUpdateComponent
   ],
   imports: [
     BrowserModule,
