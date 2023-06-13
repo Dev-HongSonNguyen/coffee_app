@@ -3,6 +3,7 @@ import { CategoryService } from 'src/app/service/category.service';
 import { PostService } from 'src/app/service/post.service';
 import { NgFor } from '@angular/common';
 import { ProductService } from 'src/app/service/product.service';
+import { SliderService } from 'src/app/service/slider.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -12,10 +13,12 @@ export class HomePageComponent {
   homeProductData: any
   homeCateData: any;
   homePostData: any;
+  homeSliderData: any;
   constructor(
     private categoryService: CategoryService,
     private postService: PostService,
-    private productService: ProductService
+    private productService: ProductService,
+    private sliderService: SliderService
   ) {}
   
   ngOnInit() {
@@ -30,7 +33,8 @@ export class HomePageComponent {
     this.productService.getAllProduct().subscribe((item: any) => {
       this.homeProductData = item?.products
     })
-
-    
+    this.sliderService.getAllSlider().subscribe((item:any)=>{
+      this.homeSliderData = item?.slider
+    })
   }
 }
