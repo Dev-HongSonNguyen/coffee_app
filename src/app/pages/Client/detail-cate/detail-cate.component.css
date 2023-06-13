@@ -1,0 +1,125 @@
+.header-auth {
+  background-color: #111111;
+}
+.header-auth-elem {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.header-auth-elem-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-auth-elem-box a {
+  font-size: 14px;
+  color: #ffffff !important;
+}
+.header-auth-elem-box span {
+  color: #ffffff;
+}
+.header-auth-elem-box-auth::after {
+  content: "|";
+  padding: 0 5px 0 5px;
+  top: -1px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+}
+.header-auth-elem-box-home::after {
+  content: "|";
+  padding: 0 5px 0 5px;
+  top: -1px;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+}
+.product {
+  background-color: #ffffff;
+  padding-top: 30px;
+}
+.product h1 {
+  text-align: center;
+  position: relative;
+  color: #111111;
+}
+.product h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  max-width: 70px;
+  height: 5px;
+  text-align: center;
+  margin: 0 auto;
+  background: #7c3a00;
+}
+.product .product-cate {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  gap: 20px;
+}
+.product .product-cate li a {
+  text-decoration: none;
+  color: #111111 !important;
+  padding: 10px 10px;
+  transition: all 0.5s ease-in;
+  border-radius: 5px;
+}
+.product .product-cate li a:hover {
+  text-decoration: none;
+  color: #ffffff !important;
+  background-color: #7c3a00;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+.product-elem {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  padding-top: 50px;
+}
+.product-elem-item .product-elem-item-img img {
+  width: 100%;
+}
+.product-elem-item-content {
+  text-align: center;
+  padding-top: 10px;
+  position: relative;
+}
+.product-elem-item-content a {
+  color: #111111;
+  font-size: 14px;
+  text-decoration: none;
+}
+.product-elem-item-content p {
+  color: #111111;
+  font-size: 14px;
+  margin: 0px;
+  font-weight: bold;
+}
+.product-elem-item-content button {
+  border: none;
+  background-color: #7c3a00;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 10px;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.product-elem-item:hover button {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  top: 85%;
+}

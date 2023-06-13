@@ -21,6 +21,7 @@ import { authGuard } from './auth.guard';
 import { SliderManagerComponent } from './pages/Admin/slider-manager/slider-manager.component';
 import { SliderAddComponent } from './pages/Admin/slider-add/slider-add.component';
 import { SliderUpdateComponent } from './pages/Admin/slider-update/slider-update.component';
+import { DetailCateComponent } from './pages/Client/detail-cate/detail-cate.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       // router cart
       {
         path: "cart", component: CartComponent,
+      },
+      //router cate
+      {
+        path: "category/:id", component: DetailCateComponent
       }
     ]
   },

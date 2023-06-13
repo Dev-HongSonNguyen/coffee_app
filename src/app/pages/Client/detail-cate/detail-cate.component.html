@@ -1,0 +1,27 @@
+<div class="header-auth">
+    <div class="header-auth-elem">
+        <div class="header-auth-elem-box">
+            <a href="" class="header-auth-elem-box-home">
+                <i class="fa-solid fa-house"></i></a>
+            <span class="header-auth-elem-box-auth">Detail</span>
+            <a href="">{{category.name}}</a>
+        </div>
+    </div>
+</div>
+<div class="product">
+    <h1>LIST PRODUCTS</h1>
+    <div class="product-elem" *ngIf="product && product.length">
+        <div class="product-elem-item" *ngFor="let item of product">
+            <div class="product-elem-item-img">
+                <a routerLink="">
+                    <img src={{item.image}} alt="">
+                </a>
+            </div>
+            <div class="product-elem-item-content">
+                <a href="#">{{item.name}}</a>
+                <p><span>$</span>{{item.price}}</p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+</div>

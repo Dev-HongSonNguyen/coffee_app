@@ -48,7 +48,7 @@
                             <a routerLink="#">CATEGORY</a>
                             <ul class="header-nav-bottom-elem-left-small" *ngIf="categoryData && categoryData.length">
                                 <li *ngFor="let cate of categoryData">
-                                    <a routerLink="">{{cate.name}}</a>
+                                    <a routerLink="category/{{cate._id}}">{{cate.name}}</a>
                                 </li>
                             </ul>
                         </li>
