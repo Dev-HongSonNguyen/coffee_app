@@ -18,6 +18,9 @@ import { SignupComponent } from './pages/Client/signup/signup.component';
 import { CartComponent } from './pages/Client/cart/cart.component';
 import { DetailProductComponent } from './pages/Client/detail-product/detail-product.component';
 import { authGuard } from './auth.guard';
+import { SliderManagerComponent } from './pages/Admin/slider-manager/slider-manager.component';
+import { SliderAddComponent } from './pages/Admin/slider-add/slider-add.component';
+import { SliderUpdateComponent } from './pages/Admin/slider-update/slider-update.component';
 
 const routes: Routes = [
   {
@@ -80,6 +83,16 @@ const routes: Routes = [
       },
       {
         path: "post/edit/:id", component: PostUpdateComponent
+      },
+      //router slider
+      {
+        path: "slider", component: SliderManagerComponent
+      },
+      {
+        path: "slider/add", component: SliderAddComponent
+      },
+      {
+        path: "slider/edit/:id", component: SliderUpdateComponent
       },
     ] 
   }

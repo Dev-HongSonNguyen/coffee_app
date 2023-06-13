@@ -1,25 +1,13 @@
 <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
     <!-- Inner -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" *ngIf="homeSliderData && homeSliderData.length">
         <!-- Single item -->
-        <div class="carousel-item active">
-            <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685869033/Duan_Angular/image/slider-2-1920x695_cb7ixp.png"
-                class="d-block w-100" alt="Motorbike Smoke" />
+        <div class="carousel-item active" *ngFor="let slide of homeSliderData">
+            <img src={{slide.image}} />
             <div class="carousel-caption d-none d-md-block">
-                <h5>100%</h5>
-                <h1>Fresh & Testy</h1>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                <a href="#">SHOP NOW</a>
-            </div>
-        </div>
-        <!-- Single item -->
-        <div class="carousel-item active">
-            <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868903/Duan_Angular/image/banner2_j2pmwt.png"
-                class="d-block w-100" alt="Mountaintop" />
-            <div class="carousel-caption d-none d-md-block">
-                <h5>100%</h5>
-                <h1>Coffe & Culture</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h5>{{slide.ratio}}</h5>
+                <h1>{{slide.name}}</h1>
+                <p>{{slide.description}}</p>
                 <a href="#">SHOP NOW</a>
             </div>
         </div>
@@ -36,12 +24,11 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<div class="category" >
+<div class="category">
     <h1>TOP CATEGORIES</h1>
-    <div class="category-elem" *ngIf="homeCateData && homeCateData.length">   
+    <div class="category-elem" *ngIf="homeCateData && homeCateData.length">
         <div class="category-elem-item" *ngFor="let item of homeCateData">
-            <img src="{{item.image}}"
-                alt="">
+            <img src="{{item.image}}" alt="">
             <a href="#" class="category-elem-item-title">{{item.name}}</a>
         </div>
         <!-- <div class="category-elem-item">
@@ -72,8 +59,7 @@
         <div class="product-elem-item" *ngFor="let item of homeProductData">
             <div class="product-elem-item-img">
                 <a href="product/{{item?._id}}">
-                    <img src="{{item?.image}}"
-                        alt="">
+                    <img src="{{item?.image}}" alt="">
                 </a>
             </div>
             <div class="product-elem-item-content">
@@ -176,8 +162,7 @@
     <div class="blog-elem" *ngIf="homePostData && homePostData.length">
         <div class="blog-elem-item" *ngFor="let item of homePostData">
             <div class="blog-elem-item-image">
-                <img src="{{item?.image}}"
-                    alt="">
+                <img src="{{item?.image}}" alt="">
                 <!-- <div class="blog-date">
                     <span class="date-month">23 October</span>
                     <span class="day-year"></span>
