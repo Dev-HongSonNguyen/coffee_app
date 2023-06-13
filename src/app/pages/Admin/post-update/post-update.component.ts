@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Ipost } from 'src/app/interface/post';
 import { PostService } from 'src/app/service/post.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-post-update',
   templateUrl: './post-update.component.html',
@@ -54,7 +54,11 @@ export class PostUpdateComponent {
 
     this.postService.updatePost(post).subscribe((data) => {
       this.post = data;
-      alert('Sửa bài viết thành công');
+      Swal.fire(
+        'Chỉnh sửa thành công rồi nè',
+        'You clicked the button!',
+        'success'
+      )
       this.router.navigate(['admin/post']);
     });
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-product-manager',
   templateUrl: './product-manager.component.html',
@@ -18,13 +18,27 @@ export class ProductManagerComponent {
   Delete(id: string) {
     // console.log("idhihih", id);
     // return
-    if (confirm('bạn có muốn xoá sản phẩm này không')) {
-      this.productService.deleteProduct(id).subscribe(() => {
-        this.productData = this.productData.filter(
-          (item: any) => item?._id !== id
-        );
-      });
-      alert("Xoá sản phẩm thành công")
-    }
+    Swal.fire({
+      title: 'Muốn xóa à',
+      text: "Xóa thì đừng hối hận nhé",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.productService.deleteProduct(id).subscribe(() => {
+          this.productData = this.productData.filter(
+            (item: any) => item?._id !== id
+          );
+        });
+        Swal.fire(
+          'Xóa thành công !',
+          'Có không giữ mất đừng tìm nhé !',
+          'success'
+        )
+      }
+    })
   }
 }

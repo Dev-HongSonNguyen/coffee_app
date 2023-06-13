@@ -5,6 +5,7 @@ import { IProduct } from 'src/app/interface/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { ICategory } from 'src/app/interface/categories';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-update',
@@ -71,7 +72,11 @@ export class ProductUpdateComponent {
 
       this.productService.updateProduct(product).subscribe(data => {
         console.log(data);
-        alert("Update San Pham Thanh Cong")
+        Swal.fire(
+          'Chỉnh sửa thành công rồi nè ',
+          'You clicked the button!',
+          'success'
+        )
         this.Navigate.navigate(['admin/product'])
       })
     }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { LocalStorageService  } from 'ngx-webstorage';
+import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-signin',
@@ -28,7 +29,11 @@ export class SigninComponent {
           this.localStorageKey,
           JSON.stringify(this.formSignin)
         );
-        alert("Đăng nhập thành công !")
+        Swal.fire(
+          'Đăng nhập thành công rồi !',
+          'You clicked the button!',
+          'success'
+        )        
         this.navigate.navigate([''])
       })
     }
