@@ -22,6 +22,9 @@ import { SliderManagerComponent } from './pages/Admin/slider-manager/slider-mana
 import { SliderAddComponent } from './pages/Admin/slider-add/slider-add.component';
 import { SliderUpdateComponent } from './pages/Admin/slider-update/slider-update.component';
 import { DetailCateComponent } from './pages/Client/detail-cate/detail-cate.component';
+import { SaleManagerComponent } from './pages/Admin/sale-manager/sale-manager.component';
+import { SaleAddComponent } from './pages/Admin/sale-add/sale-add.component';
+import { SaleUpdateComponent } from './pages/Admin/sale-update/sale-update.component';
 
 const routes: Routes = [
   {
@@ -98,6 +101,16 @@ const routes: Routes = [
       },
       {
         path: "slider/edit/:id", component: SliderUpdateComponent
+      },
+      // router sale
+      {
+        path: "sale", component: SaleManagerComponent
+      },
+      {
+        path: "sale/add", component: SaleAddComponent
+      },
+      {
+        path: "sale/edit/:id", component: SaleUpdateComponent
       },
     ] 
   }
