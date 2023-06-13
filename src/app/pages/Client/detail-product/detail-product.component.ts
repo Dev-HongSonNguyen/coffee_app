@@ -52,7 +52,6 @@ export class DetailProductComponent {
     })
   }
   addtoCart(item: any) {
-    console.log(item);
 
     Swal.fire(
       'Thêm vào giỏ hàng thành công',

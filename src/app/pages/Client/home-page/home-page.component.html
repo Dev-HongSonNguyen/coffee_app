@@ -29,7 +29,7 @@
     <div class="category-elem" *ngIf="homeCateData && homeCateData.length">
         <div class="category-elem-item" *ngFor="let item of homeCateData">
             <img src="{{item.image}}" alt="">
-            <a href="#" class="category-elem-item-title">{{item.name}}</a>
+            <a routerLink="category/{{item._id}}" class="category-elem-item-title">{{item.name}}</a>
         </div>
         <!-- <div class="category-elem-item">
             <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868901/Duan_Angular/image/cate2_wy5uqg.jpg"
@@ -56,11 +56,10 @@
         <li><a href="#">New Arrivals</a></li>
     </ul> -->
     <div class="product-elem">
-        <div *ngFor ="let pro of homeProduct , let i = index" class="product-elem-item">
+        <div *ngFor="let pro of homeProduct , let i = index" class="product-elem-item">
             <div class="product-elem-item-img">
                 <a href="product/{{pro?._id}}">
-                    <img src="{{pro.image}}"
-                        alt="">
+                    <img src="{{pro.image}}" alt="">
                 </a>
             </div>
             <div class="product-elem-item-content">
