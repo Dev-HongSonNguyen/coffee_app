@@ -16,17 +16,20 @@
 
             <div class="mt-8">
                 <ul class="space-y-4">
-                    <li class="flex items-center gap-4">
-                        <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868902/Duan_Angular/image/product1_i5bcts.jpg"
-                            alt="" class="max-w-[200px] rounded object-cover" />
+                    <li *ngFor=" let cart of cartItem" class="flex items-center gap-4">
+                        <img src="{{cart.image}}" alt="" class="max-w-[200px] rounded object-cover" />
 
                         <div>
-                            <h3 class="text-[28px] text-gray-900">IPod Shuffle</h3>
+                            <h3 class="text-[28px] text-gray-900">{{cart.name}}</h3>
 
                             <dl class="mt-0.5 space-y-px text-[20px] text-gray-600">
                                 <div>
                                     <dt class="inline">Price:</dt>
-                                    <dd class="inline"><span>$</span>200</dd>
+                                    <dd class="inline"><span>$</span>{{cart.price}}</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt>Subtotal</dt>
+                                    <dd>${{cart.subtotal}}</dd>
                                 </div>
                             </dl>
                         </div>
@@ -35,11 +38,20 @@
                             <form>
                                 <label for="Line1Qty" class="sr-only"> Quantity </label>
 
-                                <input type="number" min="1" value="1" id="Line1Qty"
+                                <input type="number" min="1" value="{{cart.quantity}}"   id="Line1Qty"
                                     class="h-14 w-18 rounded border-gray-200 bg-gray-50 p-0 text-center text-md text-[#7c3a00][-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
                             </form>
-
-                            <button class="text-gray-600 transition hover:text-[#7c3a00]">
+                            <!-- <button (click)="settingCart(cart)"
+                                class="text-gray-600 transition hover:text-[#7c3a00]">
+                                <span class="sr-only">Setting item</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="h-10 w-10">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5zM3 12l9-5 9 5M6 12v7m0-7V3" />
+                                </svg>
+                            </button> -->
+                            <button (click)="removeCart(cart._id)"
+                                class="text-gray-600 transition hover:text-[#7c3a00]">
                                 <span class="sr-only">Remove item</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="h-10 w-10">
@@ -54,10 +66,6 @@
                 <div class="mt-8 flex justify-end border-t border-gray-100 pt-8">
                     <div class="w-screen max-w-lg space-y-4">
                         <dl class="space-y-0.5 text-sm text-gray-700">
-                            <div class="flex justify-between">
-                                <dt>Subtotal</dt>
-                                <dd>£250</dd>
-                            </div>
 
                             <div class="flex justify-between">
                                 <dt>VAT</dt>
@@ -71,7 +79,7 @@
 
                             <div class="flex justify-between !text-base font-medium">
                                 <dt>Total</dt>
-                                <dd>£200</dd>
+                                <dd>£{{total + 25 -20}}</dd>
                             </div>
                         </dl>
 

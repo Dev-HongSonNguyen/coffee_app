@@ -40,7 +40,7 @@ const routes: Routes = [
       },
       // router cart
       {
-        path: "cart", component: CartComponent
+        path: "cart", component: CartComponent,
       }
     ]
   },

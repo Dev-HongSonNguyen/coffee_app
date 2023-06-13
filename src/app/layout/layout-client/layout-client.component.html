@@ -26,7 +26,7 @@
                         <!-- <h2 style="color: #111111">CAFE CONCAK</h2> -->
                     </a>
                 </div>
-                <div class="header-nav-top-elem-cart">
+                <div (click)="reload()"  class="header-nav-top-elem-cart">
                     <a routerLink="cart" class="header-nav-top-elem-cart-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
@@ -36,7 +36,7 @@
                     </a>
                     <div class="header-nav-top-elem-cart-content">
                         <p>Shopping Cart</p>
-                        <p>1 item</p>
+                        <p>{{totalItemNumber}} item</p>
                     </div>
                 </div>
             </div>
