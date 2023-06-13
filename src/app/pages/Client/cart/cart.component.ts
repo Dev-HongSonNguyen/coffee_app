@@ -29,8 +29,8 @@ export class CartComponent {
   removeCart(item: any) {
     let _this = this;
     Swal.fire({
-      title: 'Xóa nhé m?',
-      text: "Không được hối hận đâu!",
+      title: 'Muốn xóa à',
+      text: "Xóa thì đừng hối hận nhé",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

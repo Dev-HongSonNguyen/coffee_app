@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Islider } from 'src/app/interface/slider';
 import { SliderService } from 'src/app/service/slider.service';
 import { UploadService } from 'src/app/service/upload.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-slider-add',
   templateUrl: './slider-add.component.html',
@@ -33,7 +33,11 @@ export class SliderAddComponent {
       const imageUrl = data.urls[0].url
       slider.image = imageUrl
       this.sliderService.createSlider(slider).subscribe(()=>{
-        alert("Thêm slide thành công !")
+        Swal.fire(
+          'Thêm thành công rồi nè !',
+          'You clicked the button!',
+          'success'
+        )
         this.navigate.navigate(['admin/slider'])
        })
     })

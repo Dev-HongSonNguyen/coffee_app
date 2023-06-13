@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Islider } from 'src/app/interface/slider';
 import { SliderService } from 'src/app/service/slider.service';
 import { UploadService } from 'src/app/service/upload.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-slider-update',
   templateUrl: './slider-update.component.html',
@@ -49,7 +49,11 @@ export class SliderUpdateComponent {
     }
     this.sliderService.updateSlider(slider).subscribe((data) => {
       this.slider = data;
-      alert("update thành công")
+      Swal.fire(
+        'Chỉnh sửa thành công rồi nè ',
+        'You clicked the button!',
+        'success'
+      )
       this.navigate.navigate(['admin/slider'])
     })
   }

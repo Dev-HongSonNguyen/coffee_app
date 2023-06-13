@@ -6,6 +6,7 @@ import { IProduct } from 'src/app/interface/product';
 import { CategoryService } from 'src/app/service/category.service';
 import { ICategory } from 'src/app/interface/categories';
 import { UploadService } from 'src/app/service/upload.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-product-add',
   templateUrl: './product-add.component.html',
@@ -47,7 +48,11 @@ export class ProductAddComponent {
       const imageUrl = data.urls[0].url
       product.image = imageUrl
       this.productService.addProduct(product).subscribe(()=>{
-        alert("Thêm sản phẩm thành công !")
+        Swal.fire(
+          'Thêm thành công rồi nè !',
+          'You clicked the button!',
+          'success'
+        )
         this.router.navigate(['admin/product'])
        })
     })

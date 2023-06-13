@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/service/category.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-category-manager',
   templateUrl: './category-manager.component.html',
@@ -15,14 +15,25 @@ export class CategoryManagerComponent {
     })
   }
   Delete(id: string) {
-    if (confirm('Bạn không có quyền xóa danh mục !')) {
-      this.categoryService.deleteCategory(id).subscribe(() => {
-        this.categoryData = this.categoryData.filter(
-          (item: any) => item?._id !== id
-        );
-      });
-      alert("Xoá danh mục thành công")
-    }
+    Swal.fire({
+      title: 'Cài này không được xóa !',
+      text: "Xóa sẽ mất hết sản phẩm",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.categoryService.deleteCategory(id).subscribe(()=>{
+          this.categoryData = this.categoryData.filter((item:any)=> item._id !== id)
+        })
+        Swal.fire(
+          'Xóa thành công !',
+          'Vậy là lại phải thêm lại sản phẩm !',
+          'success'
+        )
+      }
+    })
   }
-  
 }

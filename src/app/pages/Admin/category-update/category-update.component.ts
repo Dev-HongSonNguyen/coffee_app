@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICategory } from 'src/app/interface/categories';
 import { CategoryService } from 'src/app/service/category.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-category-update',
   templateUrl: './category-update.component.html',
@@ -51,7 +51,11 @@ export class CategoryUpdateComponent {
     
     this.categoryService.updateCategory(category).subscribe((data) => {
       this.category = data;
-      alert("update thành công")
+      Swal.fire(
+        'Chỉnh sửa thành công rồi nè',
+        'You clicked the button!',
+        'success'
+      )
       this.router.navigate(['admin/category'])
     })
   }
