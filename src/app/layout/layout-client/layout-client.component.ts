@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartapiService } from 'src/app/service/cart.service';
 import { CategoryService } from 'src/app/service/category.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-layout-client',
@@ -35,7 +36,11 @@ export class LayoutClientComponent {
   logOut() {
     sessionStorage.removeItem('user');
     this.isLoggedIn = false;
-    alert("Đăng xuất thành công")
+    Swal.fire(
+      'Đăng xuất thành công rồi',
+      'You clicked the button!',
+      'success'
+    )
     this.navigate.navigate([''])
   }
   reload() {

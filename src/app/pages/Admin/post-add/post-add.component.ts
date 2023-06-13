@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Ipost } from 'src/app/interface/post';
 import { PostService } from 'src/app/service/post.service';
 import { UploadService } from 'src/app/service/upload.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-post-add',
   templateUrl: './post-add.component.html',
@@ -36,7 +36,11 @@ export class PostAddComponent {
       const imageUrl = data.urls[0].url
       post.image = imageUrl
       this.postService.addPost(post).subscribe(() => {
-        alert("Thêm bài viết thành công")
+        Swal.fire(
+          'Thêm thành công rồi nè',
+          'You clicked the button!',
+          'success'
+        )
         this.router.navigate(['admin/post'])
       })
     })
