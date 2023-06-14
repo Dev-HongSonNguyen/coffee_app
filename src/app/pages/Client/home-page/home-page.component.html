@@ -136,16 +136,16 @@
 </div>
 <div class="sale">
     <div class="sale-elem">
-        <div class="sale-elem-item">
-            <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868901/Duan_Angular/image/banner-sale1_kqanil.jpg"
+        <div class="sale-elem-item" *ngFor="let item of homeSaleData">
+            <img src="{{item?.image}}"
                 alt="">
-            <div class="sale-elem-content" style="right: 20px; top: 50%; transform: translateY(-50%); ">
-                <h4>WEEKEND OFFER ON</h4>
-                <h3>The Coffe Brew</h3>
+            <div class="sale-elem-content" style="right: 120px; top: 50%; transform: translateY(-50%); ">
+                <h4>{{item?.timeSale}}</h4>
+                <h3>{{item?.name}}</h3>
                 <a href="#">SHOP NOW</a>
             </div>
         </div>
-        <div class="sale-elem-item">
+        <!-- <div class="sale-elem-item">
             <img src="https://res.cloudinary.com/dwzh9i6xf/image/upload/v1685868901/Duan_Angular/image/banner-sale2_ztsioe.jpg"
                 alt="">
             <div class="sale-elem-content"
@@ -163,7 +163,7 @@
                 <h3>The Coffe Wild</h3>
                 <a href="#">SHOP NOW</a>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- <div class="special">
