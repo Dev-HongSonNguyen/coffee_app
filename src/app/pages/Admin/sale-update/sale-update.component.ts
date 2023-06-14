@@ -46,9 +46,9 @@ export class SaleUpdateComponent {
 
     const sale = {
       _id: this.sale._id,
-      name: this.sale.name || 'notFound',
-      image: this.sale.image || 'notFound',
-      timeSale: this.sale.timeSale || 'notFound'
+      name: this.saleForm.value.name || 'notFound',
+      image: this.saleForm.value.image || 'notFound',
+      timeSale: this.saleForm.value.timeSale || 'notFound'
     }
     this.saleService.updateSale(sale).subscribe((data: any) => {
       this.sale = data
