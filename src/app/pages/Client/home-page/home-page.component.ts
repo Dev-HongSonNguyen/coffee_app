@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { PostService } from 'src/app/service/post.service';
 import { NgFor } from '@angular/common';
 import { SliderService } from 'src/app/service/slider.service';
+import { SaleService } from 'src/app/service/sale.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -19,12 +20,14 @@ export class HomePageComponent {
   homeSliderData: any;
   homeCart : any;
   homeProduct :any
+  homeSaleData: any
   constructor(
     private categoryService: CategoryService,
     private postService: PostService,
     private productService: ProductService,
     private sliderService: SliderService,
-    private cartService: CartapiService
+    private cartService: CartapiService,
+    private saleService: SaleService
   ) {}
   
   ngOnInit() {
@@ -50,6 +53,9 @@ export class HomePageComponent {
     this.cartService.getAllCart().subscribe((cart: any) => {
       // console.log(cart);
       this.homeCart = cart.carts
+    })
+    this.saleService.getAllSale().subscribe((sale: any) => {
+      this.homeSaleData = sale?.sale
     })
   }
   addtoCart(item: any) {
