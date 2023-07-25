@@ -8,7 +8,7 @@ import { Isale } from '../interface/sale';
 })
 export class SaleService {
 
-  API_URL_CATE:string = "http://localhost:8080/sale"
+  API_URL_CATE:string = "https://6m23c6-8080.csb.app/sale"
   token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   // constructor() { }
   constructor(private http: HttpClient) { }

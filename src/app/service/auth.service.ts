@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
 export class AuthService {
   constructor(private http: HttpClient) { }
   signup(user: any):Observable<any>{
-    return this.http.post('http://localhost:8080/signup', user)
+    return this.http.post('https://6m23c6-8080.csb.app//signup', user)
   }
   signin(user: any):Observable<any>{
-    return this.http.post('http://localhost:8080/signin', user)
+    return this.http.post('https://6m23c6-8080.csb.app//signin', user)
   }
   authenticated(){
     return JSON.parse(sessionStorage.getItem('user') || '{}')

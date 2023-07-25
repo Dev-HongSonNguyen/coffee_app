@@ -12,9 +12,9 @@ export class UploadService {
     for (let file of files) {
       formData.append('images', file);
     }
-    return this.http.post<any>('http://localhost:8080/images', formData);
+    return this.http.post<any>('https://6m23c6-8080.csb.app/images', formData);
   }
   deleteImage(publicId: string): Observable<any> {
-    return this.http.delete(`http://localhost:8080/images/${publicId}`);
+    return this.http.delete(`https://6m23c6-8080.csb.app/images/${publicId}`);
   }
 }

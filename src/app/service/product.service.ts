@@ -6,7 +6,7 @@ import { IProduct } from '../interface/product';
   providedIn: 'root'
 })
 export class ProductService {
-  API_URL_PRO: string = "http://localhost:8080/products"
+  API_URL_PRO: string = "https://6m23c6-8080.csb.app/products"
   token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   constructor(private http: HttpClient) {}
   getAllProduct():Observable<IProduct[]>{
