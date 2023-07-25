@@ -7,7 +7,7 @@ import { Ipost } from '../interface/post';
   providedIn: 'root'
 })
 export class PostService {
-  API_URL_POST:string = "http://localhost:8080/post"
+  API_URL_POST:string = "https://6m23c6-8080.csb.app/post"
   token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   constructor(private http: HttpClient) { }
   getAllPost(): Observable<any>{

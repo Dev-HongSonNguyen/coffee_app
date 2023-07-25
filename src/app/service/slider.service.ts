@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class SliderService {
 
   constructor(private http: HttpClient) { }
-  API_URL_SLIDER = "http://localhost:8080/slider"
+  API_URL_SLIDER = "https://6m23c6-8080.csb.app/slider"
   token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   getAllSlider():Observable<Islider[]>{
     return this.http.get<Islider[]>(`${this.API_URL_SLIDER}`)

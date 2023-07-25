@@ -6,7 +6,7 @@ import { ICategory } from '../interface/categories';
   providedIn: 'root'
 })
 export class CategoryService {
-  API_URL_CATE:string = "http://localhost:8080/categories"
+  API_URL_CATE:string = "https://6m23c6-8080.csb.app/categories"
   token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   // constructor() { }
   constructor(private http: HttpClient) { }

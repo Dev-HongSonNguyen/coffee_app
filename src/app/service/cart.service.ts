@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartapiService {
   cartDataList: any = [];
   productList = new BehaviorSubject<any>([]);
-  API_URL_CART: string = "http://localhost:8080/cart"
+  API_URL_CART: string = "https://6m23c6-8080.csb.app/cart"
   // token = JSON.parse(sessionStorage.getItem('user') || '{}').accessToken
   constructor(private http: HttpClient) { }
   getAllCart() {
